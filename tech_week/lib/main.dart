@@ -49,7 +49,8 @@ class _MainPageState extends State<MainPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Code Land", style: TextStyle(color: Colors.white)),
+        title: Text("ComedyAPP", style: TextStyle(color: Colors.white, fontSize: 40)),
+        backgroundColor: Colors.red[900],
         actions: <Widget>[
           FlatButton(
             onPressed: () {
