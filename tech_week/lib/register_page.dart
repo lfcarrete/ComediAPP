@@ -26,8 +26,8 @@ class _RegisterPageState extends State<RegisterPage> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
-                    Colors.red[400],
                     Colors.red[900],
+                    Colors.redAccent[700],
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter
@@ -51,15 +51,15 @@ class _RegisterPageState extends State<RegisterPage> {
       margin: EdgeInsets.only(top: 30.0),
       child: Column(
         children: <Widget>[
-          txtName("Name", Icons.person),
-          SizedBox(height: 30.0),
-          txtAge("Age", Icons.format_list_numbered),
-          SizedBox(height: 30.0),
-          txtType("Type", Icons.panorama_horizontal),
-          SizedBox(height: 30.0),
+          txtName("Nome", Icons.person),
+          SizedBox(height: 12.0),
+          txtAge("Idade", Icons.cake),
+          SizedBox(height: 12.0),
+          txtType("Tipo de cadastro", Icons.panorama_horizontal),
+          SizedBox(height: 12.0),
           txtEmail("Email", Icons.email),
-          SizedBox(height: 30.0),
-          txtPassword("Password", Icons.lock),
+          SizedBox(height: 12.0),
+          txtPassword("Senha", Icons.lock),
         ],
       ),
     );
@@ -108,7 +108,7 @@ class _RegisterPageState extends State<RegisterPage> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.0),
         ),
-        child: Text("Sign Up", style: TextStyle(color: Colors.white)),
+        child: Text("Cadastrar", style: TextStyle(color: Colors.white)),
       )
     );
   }
@@ -123,7 +123,7 @@ class _RegisterPageState extends State<RegisterPage> {
         onPressed: () {
           Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (BuildContext context) => LoginPage()), (Route<dynamic> route) => false);
         },
-        child: Text("Already have an account? Login now!", style: TextStyle(color: Colors.black)),
+        child: Text("Já tem uma conta? Entre agora!", style: TextStyle(color: Colors.black)),
       )
     );
   }
@@ -197,8 +197,12 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Container headerSection() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
-      child: Text("ComedyAPP", style: TextStyle(color: Colors.white, fontSize: 40)),
+      margin: EdgeInsets.only(top: 10.0),
+      child: Image(
+        image: AssetImage('assets/logo_certa.jpeg'),              
+        height: 100,
+        width: 100,
+        ),
     );
   }
 }

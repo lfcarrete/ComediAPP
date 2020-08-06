@@ -39,7 +39,9 @@ class _MainPageState extends State<MainPage> {
 
   checkLoginStatus() async {
     sharedPreferences = await SharedPreferences.getInstance();
-    if (sharedPreferences.getString("token") == null){
+    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    print(sharedPreferences.getInt("token"));
+    if (sharedPreferences.getInt("token") == null){
       Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (BuildContext context) => LoginPage()), (Route<dynamic> route) => false);
     }
   }
@@ -49,7 +51,7 @@ class _MainPageState extends State<MainPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("ComedyAPP", style: TextStyle(color: Colors.white, fontSize: 40)),
+        //title: Text("ComedyAPP", style: TextStyle(color: Colors.white, fontSize: 30)),
         backgroundColor: Colors.red[900],
         actions: <Widget>[
           FlatButton(
@@ -62,7 +64,12 @@ class _MainPageState extends State<MainPage> {
           ),
         ],
       ),
-      body: Center(child: Text("Main Page")),
+      body: Image(
+          image: AssetImage('assets/tela7.PNG'),
+          width: 400,
+          height: 526,
+        ),
+      //body: Text("Main page"),
       drawer: Drawer(),
     );
 

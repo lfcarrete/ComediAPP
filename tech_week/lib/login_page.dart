@@ -26,8 +26,8 @@ class _LoginPageState extends State<LoginPage> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
-                    Colors.red[400],
                     Colors.red[900],
+                    Colors.redAccent[700],
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter
@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
         children: <Widget>[
           txtEmail("Email", Icons.email),
           SizedBox(height: 30.0),
-          txtPassword("Password", Icons.lock),
+          txtPassword("Senha", Icons.lock),
         ],
       ),
     );
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.0),
         ),
-        child: Text("Sign In", style: TextStyle(color: Colors.white)),
+        child: Text("Entrar", style: TextStyle(color: Colors.white)),
       )
     );
   }
@@ -125,13 +125,17 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 40.0,
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
       margin: EdgeInsets.only(top: 30.0),
       child: FlatButton(
         onPressed: () {
           Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (BuildContext context) => RegisterPage()), (Route<dynamic> route) => false);
         },
-        child: Text("Don't have an account? Register now!", style: TextStyle(color: Colors.black)),
+        child: Align(
+          alignment: Alignment.center,
+          child: Text(
+            "Ainda não tem uma conta? Cadastre-se agora!", style: TextStyle(color: Colors.black)
+            ),
+        ),
       )
     );
   }
@@ -168,8 +172,12 @@ class _LoginPageState extends State<LoginPage> {
 
   Container headerSection() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
-      child: Text("ComedyAPP", style: TextStyle(color: Colors.white, fontSize: 40)),
+      margin: EdgeInsets.only(top: 10.0),
+      child: Image(
+        image: AssetImage('assets/logo_certa.jpeg'),              
+        height: 100,
+        width: 100,
+        ),
     );
   }
 }
